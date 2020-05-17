@@ -1,6 +1,6 @@
-import { ReminderAPI } from './api';
+import { ReminderAPI } from './ReminderAPI';
 
-const reminderAPI = new ReminderAPI('http://localhost:4000/api');
+const reminderAPI = new ReminderAPI('http://localhost:4000');
 
 export const createReminder = (reminder) => reminderAPI.createReminder(reminder);
 
