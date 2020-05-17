@@ -1,0 +1,42 @@
+@import 'bulma';
+
+.calendar__date {
+  @extend .column;
+  background-color: $white;
+  border: 1px solid $grey-lighter;
+  height: 110px;
+  padding: 0.15rem 0.45rem;
+  text-align: left;
+}
+
+.calendar__date--active:hover {
+  // border: 1px solid $grey-dark;
+  // cursor: pointer;
+  color: $black;
+}
+
+.calendar__date--weekend {
+  background-color: $white-ter;
+  color: $blue;
+}
+
+.calendar__date--out-of-month {
+  color: $grey-light;
+}
+
+.calendar__date__reminders {
+}
+
+.calendar__date__reminder {
+  color: $white;
+  background-color: $cyan;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.15rem;
+  padding-left: 0.15rem;
+}
+
+.calendar__date__reminder:hover {
+  cursor: pointer;
+  background-color: darken($cyan, 5%);
+}

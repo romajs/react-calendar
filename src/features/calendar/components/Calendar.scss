@@ -1,0 +1,23 @@
+@import 'bulma';
+
+.calendar {
+}
+
+.calendar__header {
+  @extend .columns;
+}
+
+.calendar__header__week-day {
+  @extend .column;
+  background-color: $cyan;
+  color: $white;
+  text-align: center;
+  padding-bottom: 0rem;
+}
+
+.calendar__body {
+}
+
+.calendar__body__week {
+  @extend .columns;
+}

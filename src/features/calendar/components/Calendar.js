@@ -1,16 +1,46 @@
-import { getCurrentMonth, getCurrentYear } from '../calendarService';
+import './Calendar.scss';
 
-import { CalendarHeader } from './CalendarHeader';
-import { CalendarMonth } from './CalendarMonth';
+import * as R from 'ramda';
+
+import { CalendarDay } from './CalendarDate';
 import React from 'react';
+import { getMonthCalendar } from '../calendarService';
+import moment from 'moment';
 
-export const Calendar = () => {
-  const month = getCurrentMonth();
-  const year = getCurrentYear();
+const filterByDate = R.curry((date, reminder) => date.get('date') === moment(reminder.date).get('date'));
+
+const sortByDateAsc = R.sortBy(R.pipe(R.prop('date'), moment.bind(moment)));
+
+const filterReminders = (date, reminders) => R.pipe(R.filter(filterByDate(date)), sortByDateAsc)(reminders);
+
+export const Calendar = ({ month, year, onClick, reminders }) => {
+  const monthCalendar = getMonthCalendar(month, year);
   return (
-    <>
-      <CalendarHeader />
-      <CalendarMonth month={month} year={year} />
-    </>
+    <div className="calendar">
+      <div className="calendar__header">
+        <div className="calendar__header__week-day">Sunday</div>
+        <div className="calendar__header__week-day">Monday</div>
+        <div className="calendar__header__week-day">Tuesday</div>
+        <div className="calendar__header__week-day">Wednesday</div>
+        <div className="calendar__header__week-day">Thursday</div>
+        <div className="calendar__header__week-day">Friday</div>
+        <div className="calendar__header__week-day">Saturday</div>
+      </div>
+      <div className="calendar__body">
+        {monthCalendar.weeks.map((week) => (
+          <div key={week.weekOfMonth} className="calendar__body__week">
+            {week.dates.map((date) => (
+              <CalendarDay
+                key={date.dayOfYear()}
+                date={date}
+                targetMonth={month}
+                onClick={onClick}
+                reminders={filterReminders(date, reminders)}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
