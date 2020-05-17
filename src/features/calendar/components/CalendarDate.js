@@ -18,7 +18,7 @@ export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
   );
   const createReminder = (event) => {
     event.stopPropagation();
-    onClick({ datetime: moment().toISOString() });
+    onClick({ datetime: date.toISOString() });
   };
   const editReminder = R.curry((reminder, event) => {
     event.stopPropagation();

@@ -9,17 +9,12 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 export const _ReminderContainer = (props) => {
-  console.log(props.reminder);
-  const updateField = R.curry((name, value) => {
-    // console.log('updateField:', { name, value });
-    props.setReminderField({ name, value });
-  });
+  const updateField = R.curry((name, value) => props.setReminderField({ name, value }));
   const saveReminder = () => {
-    console.log(props.reminder);
     const reminder = R.pick(['id', 'name', 'city', 'color'], props.reminder);
+    const date = R.prop('date', props.reminder);
     const [hours, minutes] = R.prop('time', props.reminder).split(':');
-    const datetime = moment(R.prop('date', reminder)).hours(hours).minutes(minutes).toISOString();
-    console.log({ ...reminder, datetime });
+    const datetime = moment(date).hours(hours).minutes(minutes).toISOString();
     props.saveReminder({ ...reminder, datetime });
   };
   return (

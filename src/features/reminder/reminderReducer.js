@@ -28,7 +28,6 @@ const getDate = R.pipe(getMomentDatetime, R.invoker(1, 'startOf')('day'), R.invo
 const getTime = R.pipe(getMomentDatetime, R.invoker(1, 'format')('HH:mm'));
 
 const getReminder = R.pipe(
-  R.tap(console.log),
   R.merge(DEFAULT_REMINDER),
   R.converge(R.assoc('date'), [getDate, R.identity]),
   R.converge(R.assoc('time'), [getTime, R.identity]),
