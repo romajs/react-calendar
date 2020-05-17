@@ -2,9 +2,9 @@ import './CalendarDate.scss';
 
 import * as R from 'ramda';
 
+import { CalendarReminder } from './CalendarReminder';
 import React from 'react';
 import classNames from 'classnames';
-import moment from 'moment';
 
 export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
   const weekDay = date.day();
@@ -29,9 +29,7 @@ export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
       <p className="calendar__date__day">{date.get('date')}</p>
       <div className="calendar__date__reminders">
         {reminders.map((reminder) => (
-          <p key={reminder.id} className="calendar__date__reminder" onClick={editReminder(reminder)}>
-            {moment(reminder.datetime).format('HH:mm')} - {reminder.name}
-          </p>
+          <CalendarReminder key={reminder.id} reminder={reminder} onClick={editReminder(reminder)} />
         ))}
       </div>
     </div>

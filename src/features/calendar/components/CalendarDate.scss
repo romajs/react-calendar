@@ -23,20 +23,3 @@
 .calendar__date--out-of-month {
   color: $grey-light;
 }
-
-.calendar__date__reminders {
-}
-
-.calendar__date__reminder {
-  color: $white;
-  background-color: $cyan;
-  border-radius: 0.3rem;
-  font-size: 0.75rem;
-  margin-bottom: 0.15rem;
-  padding-left: 0.15rem;
-}
-
-.calendar__date__reminder:hover {
-  cursor: pointer;
-  background-color: darken($cyan, 5%);
-}

@@ -1,0 +1,61 @@
+@import 'bulma';
+
+.calendar__date__reminder {
+  color: $white;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.15rem;
+  padding-left: 0.15rem;
+}
+
+.calendar__date__reminder:hover {
+  cursor: pointer;
+}
+
+.calendar__date__reminder--blue {
+  background-color: $blue;
+}
+
+.calendar__date__reminder--blue:hover {
+  background-color: darken($blue, 5%);
+}
+
+.calendar__date__reminder--cyan {
+  background-color: $cyan;
+}
+
+.calendar__date__reminder--cyan:hover {
+  background-color: darken($cyan, 5%);
+}
+
+.calendar__date__reminder--green {
+  background-color: $green;
+}
+
+.calendar__date__reminder--green:hover {
+  background-color: darken($green, 5%);
+}
+
+.calendar__date__reminder--red {
+  background-color: $red;
+}
+
+.calendar__date__reminder--red:hover {
+  background-color: darken($red, 5%);
+}
+
+.calendar__date__reminder--turquoise {
+  background-color: $turquoise;
+}
+
+.calendar__date__reminder--turquoise:hover {
+  background-color: darken($turquoise, 5%);
+}
+
+.calendar__date__reminder--yellow {
+  background-color: $yellow;
+}
+
+.calendar__date__reminder--yellow:hover {
+  background-color: darken($yellow, 5%);
+}
