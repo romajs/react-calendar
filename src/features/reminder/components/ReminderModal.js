@@ -7,9 +7,11 @@ import React from 'react';
 import TimePicker from 'react-time-picker';
 import classNames from 'classnames';
 
-const hasId = R.propSatisfies(R.isNil, 'id');
+const isNotNil = R.complement(R.isNil);
 
-const getTitle = R.ifElse(hasId, R.always('Create reminder'), R.always('Update reminder'));
+const hasId = R.ifElse(R.isNil, R.F, R.propSatisfies(isNotNil, 'id'));
+
+const getTitle = R.ifElse(hasId, R.always('Update reminder'), R.always('Create reminder'));
 
 export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, updateField }) => {
   const updateRawField = R.curry((name, event) => updateField(name, R.path(['target', 'value'], event)));
@@ -18,7 +20,7 @@ export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, up
       <div className="modal-background" />
       <div className="modal-card">
         <header className="modal-card-head">
-          {/* <p className="modal-card-title">{getTitle(reminder)}</p> */}
+          <p className="modal-card-title">{getTitle(reminder)}</p>
           <button className="delete" aria-label="close" onClick={onClose} />
         </header>
         <section className="modal-card-body">
