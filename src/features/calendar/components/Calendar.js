@@ -7,9 +7,9 @@ import React from 'react';
 import { getMonthCalendar } from '../calendarService';
 import moment from 'moment';
 
-const filterByDate = R.curry((date, reminder) => date.get('date') === moment(reminder.date).get('date'));
+const filterByDate = R.curry((date, reminder) => date.get('date') === moment(reminder.datetime).get('date'));
 
-const sortByDateAsc = R.sortBy(R.prop('date'));
+const sortByDateAsc = R.sortBy(R.prop('datetime'));
 
 const filterReminders = (date, reminders) => R.pipe(R.filter(filterByDate(date)), sortByDateAsc)(reminders);
 

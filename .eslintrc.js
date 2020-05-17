@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    'react/jsx-handler-names': 'off',
     'comma-dangle': [
       'error',
       {

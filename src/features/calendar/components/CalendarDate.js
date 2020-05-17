@@ -18,7 +18,7 @@ export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
   );
   const createReminder = (event) => {
     event.stopPropagation();
-    onClick();
+    onClick({ datetime: moment().toISOString() });
   };
   const editReminder = R.curry((reminder, event) => {
     event.stopPropagation();
@@ -30,7 +30,7 @@ export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
       <div className="calendar__date__reminders">
         {reminders.map((reminder) => (
           <p key={reminder.id} className="calendar__date__reminder" onClick={editReminder(reminder)}>
-            {moment(reminder.date).format('HH:mm')} - {reminder.name}
+            {moment(reminder.datetime).format('HH:mm')} - {reminder.name}
           </p>
         ))}
       </div>

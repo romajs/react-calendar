@@ -4,10 +4,11 @@ import { createReminder, listReminders, updateReminder } from './reminderService
 
 import { createActions } from 'redux-actions';
 
-export const { setModalDisplay, setReminders } = createActions(
+export const { setModalDisplay, setReminders, setReminderField } = createActions(
   {
     SET_MODAL_DISPLAY: R.identity,
     SET_REMINDERS: R.identity,
+    SET_REMINDER_FIELD: R.identity,
   },
   {
     prefix: 'REMINDER',
