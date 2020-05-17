@@ -7,3 +7,5 @@ const getReminder = R.prop('reminder');
 const asMutable = R.invoker(0, 'asMutable');
 
 export const remindersSelector = createSelector([getReminder], R.pipe(R.prop('reminders'), asMutable));
+
+export const modalSelector = createSelector([getReminder], R.pipe(R.prop('modal'), asMutable));

@@ -9,7 +9,7 @@ import moment from 'moment';
 
 const filterByDate = R.curry((date, reminder) => date.get('date') === moment(reminder.date).get('date'));
 
-const sortByDateAsc = R.sortBy(R.pipe(R.prop('date'), moment.bind(moment)));
+const sortByDateAsc = R.sortBy(R.prop('date'));
 
 const filterReminders = (date, reminders) => R.pipe(R.filter(filterByDate(date)), sortByDateAsc)(reminders);
 
