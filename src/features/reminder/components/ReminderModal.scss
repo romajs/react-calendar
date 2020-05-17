@@ -1,0 +1,9 @@
+@import 'bulma';
+
+.react-date-picker__wrapper {
+  @extend .input;
+}
+
+.react-time-picker__wrapper {
+  @extend .input;
+}
