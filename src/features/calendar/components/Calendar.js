@@ -7,7 +7,12 @@ import React from 'react';
 import { getMonthCalendar } from '../calendarService';
 import moment from 'moment';
 
-const filterByDate = R.curry((date, reminder) => date.get('date') === moment(reminder.datetime).get('date'));
+const filterByDate = R.curry((date, reminder) => {
+  const startOfDay = date.clone().startOf('day');
+  const endOfDay = date.clone().endOf('day');
+  const datetime = moment(reminder.datetime);
+  return datetime.isSameOrAfter(startOfDay) && datetime.isSameOrBefore(endOfDay);
+});
 
 const sortByDateAsc = R.sortBy(R.prop('datetime'));
 

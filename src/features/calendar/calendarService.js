@@ -10,7 +10,7 @@ export const getMonthCalendar = (month, year) => {
   };
 
   const startOfMonth = moment().month(month).year(year).startOf('month');
-  const endOfMonth = startOfMonth.clone().endOf('month').startOf('day');
+  const endOfMonth = startOfMonth.clone().endOf('month').endOf('day');
 
   let date = startOfMonth.clone().startOf('week');
   let weekOfMonth = 0;
