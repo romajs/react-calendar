@@ -4,12 +4,18 @@ import 'bulma/css/bulma.css';
 import * as serviceWorker from './serviceWorker';
 
 import { App } from './App';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import configureStore from './application/configureStore';
+
+const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
