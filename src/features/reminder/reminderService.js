@@ -1,6 +1,6 @@
 import { ReminderAPI } from './ReminderAPI';
 
-const reminderAPI = new ReminderAPI('http://localhost:4000');
+const reminderAPI = new ReminderAPI(process.env.REACT_APP_REMINDER_API_URL);
 
 export const createReminder = (reminder) => reminderAPI.createReminder(reminder);
 

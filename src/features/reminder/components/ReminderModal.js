@@ -29,46 +29,45 @@ export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, up
               <label className="label">Name</label>
               <input
                 className="input"
-                type="text"
-                placeholder="Name"
                 maxLength={30}
-                value={R.prop('name', reminder)}
                 onChange={updateRawField('name')}
-              />
-            </div>
-            <div className="control">
-              <label className="label">City</label>
-              <input
-                className="input"
+                placeholder="Name"
                 type="text"
-                placeholder="City"
-                value={R.prop('city', reminder)}
-                onChange={updateRawField('city')}
+                value={R.prop('name', reminder)}
               />
             </div>
-          </div>
-          <div className="field is-grouped">
             <div className="control">
               <label className="label">Date</label>
               <DatePicker
-                value={R.prop('date', reminder)}
-                onChange={updateField('date')}
                 calendarIcon={null}
                 clearIcon={null}
+                disableCalendar
+                onChange={updateField('date')}
+                value={R.prop('date', reminder)}
               />
             </div>
             <div className="control">
               <label className="label">Time</label>
               <TimePicker
-                value={R.prop('time', reminder)}
-                onChange={updateField('time')}
-                clockIcon={null}
                 clearIcon={null}
+                clockIcon={null}
                 disableClock
+                onChange={updateField('time')}
+                value={R.prop('time', reminder)}
               />
             </div>
           </div>
-          <div className="field is-horizontal">
+          <div className="field is-grouped">
+            <div className="control">
+              <label className="label">City</label>
+              <input
+                className="input"
+                onChange={updateRawField('city')}
+                placeholder="City"
+                type="text"
+                value={R.prop('city', reminder)}
+              />
+            </div>
             <div className="control">
               <label className="label">Color</label>
               <div className="select">
@@ -81,6 +80,19 @@ export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, up
                   <option value="Yellow">Yellow</option>
                 </select>
               </div>
+            </div>
+            <div className="control is-disabled" title={R.path(['weather', 'description'], reminder)}>
+              <label className="label">Weather</label>
+              <p className="reminder-modal__weather">
+                {R.path(['weather', 'icon'], reminder) ? (
+                  <>
+                    {R.path(['weather', 'main'], reminder)}
+                    <img src={`http://openweathermap.org/img/wn/${R.path(['weather', 'icon'], reminder)}.png`} />
+                  </>
+                ) : (
+                  <span className="has-text-grey">No information</span>
+                )}
+              </p>
             </div>
           </div>
         </section>

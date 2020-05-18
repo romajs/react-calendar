@@ -1,5 +1,6 @@
-const axios = require('axios');
-const R = require('ramda');
+import * as R from 'ramda';
+
+import axios from 'axios';
 
 const getData = R.prop('data');
 

@@ -2,8 +2,17 @@
 
 .react-date-picker__wrapper {
   @extend .input;
+  border-color: #dbdbdb !important;
 }
 
 .react-time-picker__wrapper {
   @extend .input;
+  border-color: #dbdbdb !important;
+}
+
+.reminder-modal__weather {
+  @extend .input;
+  @extend .is-shadowless;
+  border: 0px;
+  cursor: default;
 }
