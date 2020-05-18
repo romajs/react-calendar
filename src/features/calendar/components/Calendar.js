@@ -18,10 +18,29 @@ const sortByDateAsc = R.sortBy(R.prop('datetime'));
 
 const filterReminders = (date, reminders) => R.pipe(R.filter(filterByDate(date)), sortByDateAsc)(reminders);
 
-export const Calendar = ({ month, year, onClick, reminders }) => {
+export const Calendar = ({ month, year, onClick, reminders, nextMonth, previousMonth }) => {
   const monthCalendar = getMonthCalendar(month, year);
   return (
     <div className="calendar">
+      <div className="calendar__header">
+        <div className="calendar__header__menu">
+          <span
+            className="calendar__header__menu__arrow calendar__header__menu__arrow--left"
+            onClick={previousMonth}
+            title="Previous month"
+          >
+            <i className="fa fa-arrow-left" />
+          </span>
+          <h1>{moment().year(year).month(month).startOf('month').format('MMM / yyyy')}</h1>
+          <span
+            className="calendar__header__menu__arrow calendar__header__menu__arrow--right"
+            onClick={nextMonth}
+            title="Next month"
+          >
+            <i className="fa fa-arrow-right" />
+          </span>
+        </div>
+      </div>
       <div className="calendar__header">
         <div className="calendar__header__week-day">Sunday</div>
         <div className="calendar__header__week-day">Monday</div>

@@ -1,3 +1,5 @@
+import * as actions from './calendarActions';
+
 import { getCurrentMonth, getCurrentYear } from './calendarService';
 
 import Immutable from 'seamless-immutable';
@@ -8,4 +10,11 @@ const initialState = Immutable({
   year: getCurrentYear(),
 });
 
-export const calendarReducer = handleActions({}, initialState);
+export const calendarReducer = handleActions(
+  {
+    [actions.setDate]: (state, { payload }) => {
+      return Immutable.set(state, 'month', payload.month).set('year', payload.year);
+    },
+  },
+  initialState,
+);

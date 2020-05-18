@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadReminders, showModal } from '../../reminder/reminderActions';
 import { monthSelector, yearSelector } from '../calendarSelectors';
+import { nextMonth, previousMonth } from '../calendarActions';
 
 import { Calendar } from './Calendar';
 import { connect } from 'react-redux';
@@ -13,7 +14,16 @@ export const _CalendarContainer = (props) => {
       setLoaded(true);
     });
   }, [loaded]);
-  return <Calendar month={props.month} year={props.year} onClick={props.showModal} reminders={props.reminders} />;
+  return (
+    <Calendar
+      month={props.month}
+      year={props.year}
+      onClick={props.showModal}
+      reminders={props.reminders}
+      nextMonth={props.nextMonth}
+      previousMonth={props.previousMonth}
+    />
+  );
 };
 
 const mapStateToProps = (state) => ({
@@ -23,6 +33,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
+  nextMonth,
+  previousMonth,
   loadReminders,
   showModal,
 };

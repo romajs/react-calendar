@@ -7,6 +7,36 @@
   @extend .columns;
 }
 
+.calendar__header__menu {
+  @extend .column;
+  @extend .is-size-4;
+  background-color: $cyan;
+  color: $white-bis;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 0rem;
+  border-bottom: 2px solid $blue;
+  display: inline-flex;
+}
+
+.calendar__header__menu__arrow {
+  color: $white;
+}
+
+.calendar__header__menu__arrow:hover {
+  color: darken($white, 5%);
+  cursor: pointer;
+}
+
+.calendar__header__menu__arrow--left {
+  margin-right: auto;
+}
+
+.calendar__header__menu__arrow--right {
+  margin-left: auto;
+}
+
 .calendar__header__week-day {
   @extend .column;
   background-color: $cyan;
