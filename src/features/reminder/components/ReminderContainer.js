@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import React, { useEffect } from 'react';
 import { displaySelector, reminderSelector } from '../reminderSelectors';
-import { hideModal, saveReminder, setReminderField } from '../reminderActions';
+import { hideModal, removeReminder, saveReminder, setReminderField } from '../reminderActions';
 
 import { ReminderModal } from './ReminderModal';
 import { connect } from 'react-redux';
@@ -15,6 +15,9 @@ const canFetchWeather = R.allPass([R.prop('city'), R.prop('date'), R.prop('time'
 
 export const _ReminderContainer = (props) => {
   const updateField = R.curry((name, value) => props.setReminderField({ name, value }));
+
+  const removeReminder = () => props.removeReminder(R.prop('id', props.reminder));
+
   const saveReminder = () => {
     const reminder = R.pick(['id', 'name', 'city', 'color'], props.reminder);
     const date = R.prop('date', props.reminder);
@@ -34,8 +37,9 @@ export const _ReminderContainer = (props) => {
   return (
     <ReminderModal
       display={props.display}
-      onClose={props.hideModal}
       onCancel={props.hideModal}
+      onClose={props.hideModal}
+      onRemove={removeReminder}
       onSave={saveReminder}
       reminder={props.reminder}
       updateField={updateField}
@@ -49,9 +53,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  setReminderField,
-  saveReminder,
   hideModal,
+  removeReminder,
+  saveReminder,
+  setReminderField,
 };
 
 export const ReminderContainer = connect(mapStateToProps, mapDispatchToProps)(_ReminderContainer);

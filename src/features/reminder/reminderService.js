@@ -6,4 +6,6 @@ export const createReminder = (reminder) => reminderAPI.createReminder(reminder)
 
 export const listReminders = () => reminderAPI.listReminders();
 
+export const removeReminder = (reminder) => reminderAPI.removeReminder(reminder);
+
 export const updateReminder = ({ id, ...reminder }) => reminderAPI.updateReminder(id, reminder);

@@ -13,7 +13,7 @@ const hasId = R.ifElse(R.isNil, R.F, R.propSatisfies(isNotNil, 'id'));
 
 const getTitle = R.ifElse(hasId, R.always('Update reminder'), R.always('Create reminder'));
 
-export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, updateField }) => {
+export const ReminderModal = ({ display, onCancel, onClose, onRemove, onSave, reminder, updateField }) => {
   const updateRawField = R.curry((name, event) => updateField(name, R.path(['target', 'value'], event)));
   return (
     <div className={classNames('modal', { 'is-active': display })}>
@@ -97,12 +97,19 @@ export const ReminderModal = ({ display, onCancel, onClose, onSave, reminder, up
           </div>
         </section>
         <footer className="modal-card-foot">
-          <button className="button is-success" onClick={onSave}>
-            Save changes
-          </button>
           <button className="button" onClick={onCancel}>
             Cancel
           </button>
+          <div className="reminder__modal__buttons--right">
+            {hasId(reminder) && (
+              <button className="button is-danger" onClick={onRemove}>
+                Remove
+              </button>
+            )}
+            <button className="button is-success" onClick={onSave}>
+              Save changes
+            </button>
+          </div>
         </footer>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import * as R from 'ramda';
-
-import { createReminder, listReminders, updateReminder } from './reminderService';
+import * as reminderService from './reminderService';
 
 import { createActions } from 'redux-actions';
 
@@ -24,15 +23,21 @@ export const hideModal = () => (dispatch) => {
 };
 
 export const loadReminders = () => async (dispatch) => {
-  const reminders = await listReminders();
+  const reminders = await reminderService.listReminders();
   dispatch(setReminders(reminders));
+};
+
+export const removeReminder = (id) => async (dispatch) => {
+  await reminderService.removeReminder(id);
+  dispatch(hideModal());
+  dispatch(loadReminders());
 };
 
 export const saveReminder = (reminder) => async (dispatch) => {
   if (R.propSatisfies(R.isNil, 'id', reminder)) {
-    await createReminder(reminder);
+    await reminderService.createReminder(reminder);
   } else {
-    await updateReminder(reminder);
+    await reminderService.updateReminder(reminder);
   }
   dispatch(hideModal());
   dispatch(loadReminders());

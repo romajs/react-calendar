@@ -26,6 +26,10 @@ export class ReminderAPI {
     return this.axios.get(`/reminders`).then(getData);
   }
 
+  removeReminder(id) {
+    return this.axios.delete(`/reminders/${id}`).then(getData);
+  }
+
   updateReminder(id, payload) {
     return this.axios.put(`/reminders/${id}`, payload).then(getData);
   }
