@@ -6,7 +6,7 @@ import { CalendarReminder } from './CalendarReminder';
 import React from 'react';
 import classNames from 'classnames';
 
-export const CalendarDay = ({ date, targetMonth, onClick, reminders }) => {
+export const CalendarDate = ({ date, targetMonth, onClick, reminders }) => {
   const weekDay = date.day();
   const weekend = weekDay === 0 || weekDay === 6;
   const inSameMonth = date.get('month') === targetMonth;

@@ -1,0 +1,5 @@
+@import 'bulma';
+
+.app {
+  @extend .container.is-fluid;
+}

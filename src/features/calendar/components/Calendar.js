@@ -2,7 +2,7 @@ import './Calendar.scss';
 
 import * as R from 'ramda';
 
-import { CalendarDay } from './CalendarDate';
+import { CalendarDate } from './CalendarDate';
 import React from 'react';
 import { getMonthCalendar } from '../calendarService';
 import moment from 'moment';
@@ -35,7 +35,7 @@ export const Calendar = ({ month, year, onClick, reminders }) => {
         {monthCalendar.weeks.map((week) => (
           <div key={week.weekOfMonth} className="calendar__body__week">
             {week.dates.map((date) => (
-              <CalendarDay
+              <CalendarDate
                 key={date.dayOfYear()}
                 date={date}
                 targetMonth={month}

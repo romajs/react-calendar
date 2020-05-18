@@ -11,7 +11,6 @@ export const _CalendarContainer = (props) => {
   useEffect(() => {
     props.loadReminders().then(() => {
       setLoaded(true);
-      props.showModal(props.reminders[0]);
     });
   }, [loaded]);
   return <Calendar month={props.month} year={props.year} onClick={props.showModal} reminders={props.reminders} />;

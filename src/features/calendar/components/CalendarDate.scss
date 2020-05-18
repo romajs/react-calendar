@@ -4,14 +4,12 @@
   @extend .column;
   background-color: $white;
   border: 1px solid $grey-lighter;
-  height: 110px;
+  height: 6.97rem;
   padding: 0.15rem 0.45rem;
   text-align: left;
 }
 
 .calendar__date--active:hover {
-  // border: 1px solid $grey-dark;
-  // cursor: pointer;
   color: $black;
 }
 
@@ -22,4 +20,10 @@
 
 .calendar__date--out-of-month {
   color: $grey-light;
+}
+
+.calendar__date__day {
+}
+
+.calendar__date__reminders {
 }
