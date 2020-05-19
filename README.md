@@ -129,7 +129,7 @@ Obviously, all of this could be done with more time for development. =)
 
 ![](./docs/records/month-navigation.gif)
 
-### Remover reminder
+### Remove reminder
 
 ![](./docs/records/remove-reminder.gif)
 
