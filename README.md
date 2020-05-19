@@ -119,6 +119,20 @@ In addition, much of the code can be refactored, there is a lot of instantiation
 
 Obviously, all of this could be done with more time for development. =)
 
+## Records
+
+### Create and update reminder
+
+![](./docs/records/create-and-update-reminder.gif)
+
+### Month navigation
+
+![](./docs/records/month-navigation.gif)
+
+### Remover reminder
+
+![](./docs/records/remove-reminder.gif)
+
 ---
 
 romajs - 2020
