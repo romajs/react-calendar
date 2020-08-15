@@ -1,7 +1,35 @@
 {
   "name": "react-calendar",
   "version": "0.1.0",
+  "author": "romajs",
   "private": true,
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "lint:watch": "npm run lint -- -w",
+    "lint": "esw 'src/**/*.{js,jsx}' --color --fix --quiet",
+    "mockserver": "json-server --port 4000 --watch db.json",
+    "start:dev": "run-p start mockserver",
+    "start": "react-scripts start",
+    "test": "cross-env CI=true react-scripts test",
+    "test:watch": "react-scripts test"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -24,32 +52,6 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "seamless-immutable": "^7.1.4"
-  },
-  "scripts": {
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "lint:watch": "npm run lint -- -w",
-    "lint": "esw 'src/**/*.{js,jsx}' --color --fix --quiet",
-    "mockserver": "json-server --port 4000 --watch db.json",
-    "start:dev": "run-p start mockserver",
-    "start": "react-scripts start",
-    "test": "cross-env CI=true react-scripts test",
-    "test:watch": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
