@@ -8,7 +8,7 @@
 
 ## Description
 
-This projects features a simple calendar created witch **ReactJS** and **BulmaCSS** totally from scratch.
+This projects features a simple calendar created totally from scratch with **ReactJS** and **BulmaCSS**.
 
 ![](./docs/img/thumbnail.png)
 
