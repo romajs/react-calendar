@@ -1,5 +1,13 @@
 # react-calendar
 
+![GitHub](https://img.shields.io/github/license/romajs/react-calendar)
+![node](https://img.shields.io/badge/node-12-brightgreen.svg)
+![react](https://img.shields.io/badge/react-16-brightgreen.svg)
+![bulma](https://img.shields.io/badge/bulma-0.8-yellow.svg)
+![Requires.io](https://img.shields.io/requires/github/romajs/react-calendar)
+
+## Description
+
 This projects features a simple calendar created witch **ReactJS** and **BulmaCSS** totally from scratch.
 
 ![](./docs/img/thumbnail.png)
