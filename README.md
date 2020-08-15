@@ -1,6 +1,12 @@
 # react-calendar
 
-This projects features a simple calendar created totally from scratch using:
+This projects features a simple calendar created witch **ReactJS** and **BulmaCSS** totally from scratch.
+
+![](./docs/img/thumbnail.png)
+
+## Frameworks/libs
+
+Main frameworks and libraries used on this project.
 
 - [Axios](https://github.com/axios/axios#example)
 - [BulmaCSS](https://bulma.io/documentation/overview/start/)
@@ -51,6 +57,8 @@ This projects aims for **production**, so you could also bring the application u
 ![](./docs/records/remove-reminder.gif)
 
 ## Documentation
+
+For detailed information please see this project documentation.
 
 - [Considerations](./docs/CONSIDERATIONS.md)
 - [Specifications](./docs/SPECIFICATIONS.md)

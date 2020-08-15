@@ -1,3 +1,46 @@
 {
-  "reminders": []
+  "reminders": [
+    {
+      "name": "Update react-calendar",
+      "city": "Campinas",
+      "color": "Yellow",
+      "datetime": "2020-08-15T18:00:00.000Z",
+      "id": 1
+    },
+    {
+      "name": "Relax and chill 8)",
+      "city": "Campinas",
+      "color": "Blue",
+      "datetime": "2020-08-16T15:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "Work hard",
+      "city": "",
+      "color": "Red",
+      "datetime": "2020-08-17T11:00:00.000Z",
+      "id": 3
+    },
+    {
+      "name": "Work on more stuff",
+      "city": "",
+      "color": "Turquoise",
+      "datetime": "2020-08-17T16:00:00.000Z",
+      "id": 4
+    },
+    {
+      "name": "Have a beer!",
+      "city": "",
+      "color": "Cyan",
+      "datetime": "2020-08-21T21:00:00.000Z",
+      "id": 5
+    },
+    {
+      "name": "Father's day",
+      "city": "",
+      "color": "Green",
+      "datetime": "2020-08-09T03:00:00.000Z",
+      "id": 6
+    }
+  ]
 }
