@@ -10,6 +10,8 @@
 
 This projects features a simple calendar created totally from scratch with **ReactJS** and **BulmaCSS**.
 
+**Live demo: [http://react-calendar.romajs.surge.sh](http://react-calendar.romajs.surge.sh)**
+
 ![](./docs/img/thumbnail.png)
 
 ## Frameworks/libs

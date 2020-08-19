@@ -1,0 +1,6 @@
+@import 'bulma';
+
+.credits {
+  @extend .column;
+  @extend .has-text-centered;
+}
